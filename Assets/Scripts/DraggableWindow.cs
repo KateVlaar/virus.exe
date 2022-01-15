@@ -32,7 +32,6 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Dragging!");
         dragWindow.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
