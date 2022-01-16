@@ -18,6 +18,7 @@ public class PopupManager : MonoBehaviour
     
     public GameObject adWindow;
     public Canvas adWindowCanvas;
+    public GameObject gameOverScreen;
     
     [SerializeField] public List<Sprite> normalPool = new List<Sprite>();
     [SerializeField] public List<Sprite> glitchPool = new List<Sprite>();
@@ -49,6 +50,7 @@ public class PopupManager : MonoBehaviour
         openCounter = 0;
         closedCounter = 30; // TODO: Change from 30 to 0 (this was for debugging)
         difficulty = 0.0f;
+        gameOverScreen.GetComponent<SpriteRenderer>().color = new Color32(255,255,255,0);
     }
 
     // Update is called once per frame
@@ -158,6 +160,7 @@ public class PopupManager : MonoBehaviour
         if (openCounter >= 10)
         {
             _shouldSpawn = false;
+            gameOverScreen.GetComponent<SpriteRenderer>().color = new Color32(255,255,255,0);
         }
     }
 
