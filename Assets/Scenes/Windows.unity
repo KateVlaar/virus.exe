@@ -486,9 +486,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976b9dc47a9a64547b0d294247993cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnFrequency: 5
   adWindow: {fileID: 995635319232693785, guid: 6866d456bf680a14b8d82536d172b0e6, type: 3}
   adWindowCanvas: {fileID: 806351703}
+  normalPool:
+  - {fileID: 21300000, guid: 9c1ea0e599b477b4fa90fbeea1caefc1, type: 3}
+  - {fileID: 21300000, guid: c5d655b60ccd1d240b862d5e66c536ab, type: 3}
+  - {fileID: 21300000, guid: 7dfe3c150da5f4c40874f10553fe20c4, type: 3}
+  - {fileID: 21300000, guid: a44187a68162e0f45aba6ef0ae5ba501, type: 3}
+  - {fileID: 21300000, guid: f7743ca143059c8459df12fab30403bc, type: 3}
+  - {fileID: 21300000, guid: 7c6ee74fa2999e44790b860720f46bf3, type: 3}
+  - {fileID: 21300000, guid: 582299ef27d51874990defc8d08d5523, type: 3}
+  glitchPool:
+  - {fileID: 21300000, guid: c5d655b60ccd1d240b862d5e66c536ab, type: 3}
+  slowPool:
+  - {fileID: 21300000, guid: b08d2c9ffd1f9364cba2bc64898d807f, type: 3}
+  - {fileID: 21300000, guid: c77fcbf61f62e7542b5bc0c05b39c533, type: 3}
+  - {fileID: 21300000, guid: 3d28dec9e121257448431d28733a798c, type: 3}
+  - {fileID: 21300000, guid: 63bf899cd01abbd4dbc5f06fd7cbcec7, type: 3}
+  icePool:
+  - {fileID: 21300000, guid: 953e35df126c8404680240e3e112f1a0, type: 3}
+  - {fileID: 21300000, guid: f0ec95668b4fa004289abd39c2ed8d9e, type: 3}
+  - {fileID: 21300000, guid: fcf0f6f4f6a92a34d9e40eaeb3fd0c9b, type: 3}
+  - {fileID: 21300000, guid: 415283468cf1cba4a953ff37b3e74bff, type: 3}
+  firePool:
+  - {fileID: 21300000, guid: 5dd8e44924c264642aa73a030b1b0ed9, type: 3}
+  - {fileID: 21300000, guid: 897014f2cdb45db4cb65fe97540fbf36, type: 3}
+  - {fileID: 21300000, guid: 6f085d99e6eeb0149abd343d2e6de6a0, type: 3}
+  spawnFrequency: 5
+  openCounter: 0
+  closedCounter: 0
+  difficulty: 0
+  windowType: 0
+  windowSprite: {fileID: 0}
 --- !u!4 &1264683582
 Transform:
   m_ObjectHideFlags: 0
