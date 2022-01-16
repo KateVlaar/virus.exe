@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
     [SerializeField] private RectTransform dragWindow;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private Button closeButton;
 
     private void Awake()
     {
@@ -28,6 +30,12 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
                 testCanvasTransform = testCanvasTransform.parent;
             }
         }
+
+        if (closeButton == null)
+        {
+            closeButton = transform.GetComponentInChildren<Button>();
+            closeButton.onClick.AddListener(CloseWindow);
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -38,5 +46,11 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         dragWindow.SetAsLastSibling();
+    }
+
+    void CloseWindow()
+    {
+        Destroy(this);
+        Destroy(this.transform.parent.gameObject);
     }
 }
