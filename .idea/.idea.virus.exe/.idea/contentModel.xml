@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\lanea\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\lanea\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_virus.exe.1837008393.00" t="ExcludeRecursive" />
+    <e p="F:\Github\virus.exe" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="ClickManager.cs" t="Include" />
+          <e p="DraggableWindow.cs" t="Include" />
+          <e p="IClickable.cs" t="Include" />
+          <e p="PopupManager.cs" t="Include" />
+          <e p="VirusExeScript.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+      <e p="virus.exe.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

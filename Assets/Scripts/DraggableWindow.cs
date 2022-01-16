@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
     [SerializeField] private RectTransform dragWindow;
-    [SerializeField] private Canvas canvas;
+    [SerializeField] private Canvas _canvas;
     [SerializeField] private Button closeButton;
 
     private void Awake()
@@ -17,20 +17,6 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
             dragWindow = transform.parent.GetComponent<RectTransform>();
         }
 
-        if (canvas == null)
-        {
-            Transform testCanvasTransform = transform.parent;
-            while (testCanvasTransform != null)
-            {
-                canvas = testCanvasTransform.GetComponent<Canvas>();
-                if (canvas != null)
-                {
-                    break;
-                }
-                testCanvasTransform = testCanvasTransform.parent;
-            }
-        }
-
         if (closeButton == null)
         {
             closeButton = transform.GetComponentInChildren<Button>();
@@ -38,9 +24,14 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
         }
     }
 
+    public void setCanvas(Canvas canvas)
+    {
+        _canvas = canvas;
+    }
+
     public void OnDrag(PointerEventData eventData)
     {
-        dragWindow.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        dragWindow.anchoredPosition += eventData.delta / _canvas.scaleFactor;
         var x = Mathf.Clamp(dragWindow.anchoredPosition.x, ((Screen.width/2) * -1) + (dragWindow.rect.width) / 2, (Screen.width/2) - (dragWindow.rect.width / 2));
         var y = Mathf.Clamp(dragWindow.anchoredPosition.y, ((Screen.height/2) * -1) + (dragWindow.rect.height) / 2, (Screen.height/2) - (dragWindow.rect.height / 2));
 
