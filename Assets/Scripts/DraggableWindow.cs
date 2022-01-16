@@ -9,6 +9,7 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     [SerializeField] private RectTransform dragWindow;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Button closeButton;
+    [SerializeField] private GameObject popupReference;
 
     private void Awake()
     {
@@ -45,6 +46,8 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     void CloseWindow()
     {
+        GameObject.Find("PopupManager").SendMessage("DecrementOpenCounter");
+        GameObject.Find("PopupManager").SendMessage("IncrementClosedCounter");
         Destroy(this);
         Destroy(transform.parent.gameObject);
     }
