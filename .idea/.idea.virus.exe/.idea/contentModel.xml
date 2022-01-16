@@ -10,9 +10,11 @@
           <e p="ClickManager.cs" t="Include" />
           <e p="DraggableWindow.cs" t="Include" />
           <e p="FillBar.cs" t="Include" />
+          <e p="HideTutorial.cs" t="Include" />
           <e p="IClickable.cs" t="Include" />
           <e p="PopupManager.cs" t="Include" />
           <e p="RestartGame.cs" t="Include" />
+          <e p="ShowTutorial.cs" t="Include" />
           <e p="Timer.cs" t="Include" />
           <e p="TimerBar.cs" t="Include" />
           <e p="VirusExeScript.cs" t="Include" />

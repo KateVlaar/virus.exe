@@ -101,19 +101,19 @@ public class PopupManager : MonoBehaviour
         switch (windowType)
         {
             case windowTypes.Normal:
-                windowSprite = normalPool[(int)Random.Range(0, 2)];
+                windowSprite = normalPool[(int)Random.Range(0, 7)];
                 break;
             case windowTypes.Glitch:
-                windowSprite = glitchPool[(int)Random.Range(0, 2)];
+                windowSprite = glitchPool[(int)Random.Range(0, 3)];
                 break;
             case windowTypes.Slow:
-                windowSprite = slowPool[(int)Random.Range(0, 2)];
+                windowSprite = slowPool[(int)Random.Range(0, 3)];
                 break;
             case windowTypes.Ice:
-                windowSprite = icePool[(int)Random.Range(0, 2)];
+                windowSprite = icePool[(int)Random.Range(0, 4)];
                 break;
             case windowTypes.Fire:
-                windowSprite = firePool[(int)Random.Range(0, 2)];
+                windowSprite = firePool[(int)Random.Range(0, 4)];
                 break;
         }
         
@@ -172,27 +172,27 @@ public class PopupManager : MonoBehaviour
         }
         if (closedCounter > 20)
         {
-            IncrementDifficulty(0.2f, 4.0f);
+            IncrementDifficulty(0.2f, 3.0f);
         }
         if (closedCounter > 30)
         {
-            IncrementDifficulty(0.3f, 3.0f);
+            IncrementDifficulty(0.3f, 2.0f);
         }
         if (closedCounter > 40)
         {
-            IncrementDifficulty(0.4f, 3.0f);
+            IncrementDifficulty(0.4f, 1.0f);
         }
         if (closedCounter > 50)
         {
-            IncrementDifficulty(0.5f, 2.0f);
+            IncrementDifficulty(0.5f, 0.75f);
         }
         if (closedCounter > 60)
         {
-            IncrementDifficulty(0.6f, 2.0f);
+            IncrementDifficulty(0.6f, 0.50f);
         }
         if (closedCounter > 70)
         {
-            IncrementDifficulty(0.7f, 1.0f);
+            IncrementDifficulty(0.7f, 0.25f);
         }
         if (closedCounter > 80)
         {

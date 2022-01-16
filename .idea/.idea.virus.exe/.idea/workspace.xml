@@ -4,9 +4,9 @@
     <list default="true" id="b7e0345e-4f7b-4882-8858-a007fe21a388" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Window.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Window.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Windows.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Windows.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +18,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RestartGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ShowTutorial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D3B66F0A-D4E3-4A55-B6EF-91AB84878193/71/0802f96a/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HideTutorial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -28,6 +30,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/TimerBar.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RestartGame.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ShowTutorial.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/HideTutorial.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="23ksT8M6aZ3E2w2Qq9aUcempQbC" />
@@ -43,7 +47,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -75,7 +79,7 @@
       <workItem from="1642289919651" duration="4126000" />
       <workItem from="1642315321612" duration="4800000" />
       <workItem from="1642329252838" duration="300000" />
-      <workItem from="1642347036764" duration="4132000" />
+      <workItem from="1642347036764" duration="7092000" />
     </task>
     <servers />
   </component>
