@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b7e0345e-4f7b-4882-8858-a007fe21a388" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DraggableWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DraggableWindow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +21,7 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/SpawnWindow.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DraggableWindow.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="23ksT8M6aZ3E2w2Qq9aUcempQbC" />
@@ -65,7 +67,7 @@
       <updated>1642289438682</updated>
       <workItem from="1642289454347" duration="32000" />
       <workItem from="1642289919651" duration="4126000" />
-      <workItem from="1642315321612" duration="1400000" />
+      <workItem from="1642315321612" duration="4800000" />
     </task>
     <servers />
   </component>

@@ -10,7 +10,14 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     [SerializeField] private RectTransform dragWindow;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Button closeButton;
-    [SerializeField] private GameObject popupReference;
+    public enum windowTypes
+    {
+        Normal,
+        Glitch,
+        Slow,
+        Ice,
+        Fire
+    }
 
     private void Awake()
     {
@@ -29,6 +36,38 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     public void setCanvas(Canvas canvas)
     {
         _canvas = canvas;
+    }
+    
+    public void setWindowType(float difficulty)
+    {
+        windowTypes windowType;
+        //if (Random.value > 0.1)
+        if (false)
+        {
+            windowType = windowTypes.Normal;
+        }
+        else
+        {
+            windowType = (windowTypes)Random.Range(1, 4);
+        }
+        switch (windowType)
+        {
+            case windowTypes.Normal:
+                GetComponent<Image>().color = new Color32(255,255,255,100);
+                break;
+            case windowTypes.Glitch:
+                GetComponent<Image>().color = new Color32(203,66,245,100);
+                break;
+            case windowTypes.Slow:
+                GetComponent<Image>().color = new Color32(245, 230, 66,100);
+                break;
+            case windowTypes.Ice:
+                GetComponent<Image>().color = new Color32(31, 179, 237,100);
+                break;
+            case windowTypes.Fire:
+                GetComponent<Image>().color = new Color32(245, 34, 55,100);
+                break;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)

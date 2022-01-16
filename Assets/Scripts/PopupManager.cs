@@ -75,6 +75,7 @@ public class PopupManager : MonoBehaviour
         GameObject newAdWindow = Instantiate(adWindow, randomPosition, quaternion.identity);
         newAdWindow.transform.SetParent(adWindowCanvas.transform, false);
         newAdWindow.transform.Find("TitleBar").SendMessage("setCanvas", adWindowCanvas);
+        newAdWindow.transform.Find("TitleBar").SendMessage("setWindowType", difficulty);
         spawnCountdown = spawnFrequency;
     }
 
