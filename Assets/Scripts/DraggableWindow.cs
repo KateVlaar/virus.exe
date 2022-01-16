@@ -41,6 +41,10 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     public void OnDrag(PointerEventData eventData)
     {
         dragWindow.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        var x = Mathf.Clamp(dragWindow.anchoredPosition.x, ((Screen.width/2) * -1) + (dragWindow.rect.width) / 2, (Screen.width/2) - (dragWindow.rect.width / 2));
+        var y = Mathf.Clamp(dragWindow.anchoredPosition.y, ((Screen.height/2) * -1) + (dragWindow.rect.height) / 2, (Screen.height/2) - (dragWindow.rect.height / 2));
+
+        dragWindow.anchoredPosition = new Vector2(x, y);
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -51,6 +55,6 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     void CloseWindow()
     {
         Destroy(this);
-        Destroy(this.transform.parent.gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }
