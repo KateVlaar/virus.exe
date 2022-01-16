@@ -2,11 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.UI;
 
 public class TimerBar : FillBar
 {
+    [SerializeField] private Slider slider;
+
+//    [SerializeField] private Slider closeSlider;
    // Event to call when timer times out
    private UnityEvent onTimerComplete;
+
+    private void Awake()
+    {
+        if (slider == null)
+        {
+            slider = transform.parent.GetComponent<Slider>();
+        }
+    }
 
    // Create a property to handle the slider's value
    public new float CurrentValue {
@@ -27,8 +39,8 @@ public class TimerBar : FillBar
     // Start is called before the first frame update
     void Start()
     {
-        if (onTimerComplete == null)
-            onTimerComplete = new UnityEvent();
+        // if (onTimerComplete == null)
+        //     onTimerComplete = new UnityEvent();
         onTimerComplete.AddListener(OnTimerComplete);        
     }
 
@@ -40,5 +52,6 @@ public class TimerBar : FillBar
 
     void OnTimerComplete() {
         Debug.Log("Timer Complete");
+        slider.parent.Find("DraggableWindow").SendMessage("CloseWindow", adWindowCanvas);
     }
 }

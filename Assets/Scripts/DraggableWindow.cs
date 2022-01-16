@@ -55,3 +55,5 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
         Destroy(transform.parent.gameObject);
     }
 }
+
+
