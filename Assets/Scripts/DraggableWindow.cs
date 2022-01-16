@@ -39,9 +39,7 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
         if (slider == null)
         {
             slider = transform.parent.GetComponentInChildren<Slider>();
-
             TimerBar t = slider.GetComponent<TimerBar>();
-
             t.onTimerComplete.AddListener(TimerComplete);
         }
     }
@@ -67,22 +65,38 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
         {
             windowType = (windowTypes)Random.Range(1, 4);
         }
+        var x = GetComponent<Image>().GetComponentInChildren<Image>();
+        var j = x.GetComponentInChildren<Image>();
+
+        //var UIHierarchyParent = transform.parent.parent.GetComponentsInChildren<Image>();
+        //var ProgressBarFill = UIHierarchyParent.Where(k => k.transform.name == "Fill").FirstOrDefault();
+
+        GameObject p = (GameObject)GetComponent<Image>().gameObject;
+
+        var UIHierarchyParent = GetComponent<Image>().transform.GetComponentsInChildren<Image>();
+        var ProgressBarFill = UIHierarchyParent.Where(k => k.transform.name == "Fill").FirstOrDefault();
+
         switch (windowType)
         {
             case windowTypes.Normal:
-                GetComponent<Image>().color = new Color32(255,255,255,100);
+                GetComponent<Image>().color = new Color32(255,255,255,255);
+                ProgressBarFill.color = new Color32(222, 222, 222, 255);
                 break;
             case windowTypes.Glitch:
-                GetComponent<Image>().color = new Color32(203,66,245,100);
+                GetComponent<Image>().color = new Color32(203,66,245,255);
+                ProgressBarFill.color = new Color32(159, 37, 196, 255);
                 break;
             case windowTypes.Slow:
-                GetComponent<Image>().color = new Color32(245, 230, 66,100);
+                GetComponent<Image>().color = new Color32(245, 230, 66,255);
+                ProgressBarFill.color = new Color32(209, 193, 17, 255);
                 break;
             case windowTypes.Ice:
-                GetComponent<Image>().color = new Color32(31, 179, 237,100);
+                GetComponent<Image>().color = new Color32(31, 179, 237,255);
+                ProgressBarFill.color = new Color32(10, 142, 194, 255);
                 break;
             case windowTypes.Fire:
-                GetComponent<Image>().color = new Color32(245, 34, 55,100);
+                GetComponent<Image>().color = new Color32(245, 34, 55,255);
+                ProgressBarFill.color = new Color32(181, 18, 34, 255);
                 break;
         }
     }
@@ -121,7 +135,7 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     void TimerComplete()
     {
-        closeButton.onClick.RemoveAllListeners();
+        closeButton.interactable = false;
         timerUp = true;
     }
 }

@@ -16,14 +16,18 @@ public class TimerBar : FillBar
            return base.CurrentValue;
        }
        set {
-           // If value exceeds timer value, invoke the time out function
-           if (value >= slider.maxValue && !timerUp)
+            if (slider == null)
+            {
+                slider = transform.parent.GetComponentInChildren<Slider>();
+
+            }// If value exceeds timer value, invoke the time out function
+                if (slider && value >= slider.maxValue && !timerUp)
             {
                 onTimerComplete.Invoke();
                 base.CurrentValue = slider.maxValue;
                 timerUp = true;
             }
-            else
+            else if (slider)
             {
                 // Remove overfill
                 base.CurrentValue = value % slider.maxValue;
@@ -44,7 +48,7 @@ public class TimerBar : FillBar
     // Update is called once per frame
     void Update()
     {
-        CurrentValue += 0.0153f;
+        CurrentValue += 0.00153f;
     }
 
     public void OnTimerComplete() {
