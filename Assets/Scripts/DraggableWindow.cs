@@ -10,6 +10,11 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     [SerializeField] private RectTransform dragWindow;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Button closeButton;
+    [SerializeField] private Sprite testSprite;
+    
+    public GameObject[] prefabPool;
+    public GameObject[] prefabRandom;
+    
     public enum windowTypes
     {
         Normal,
@@ -50,22 +55,28 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
         {
             windowType = (windowTypes)Random.Range(1, 4);
         }
+        GameObject adSpace = transform.GetChild(0).gameObject;
         switch (windowType)
         {
             case windowTypes.Normal:
-                GetComponent<Image>().color = new Color32(255,255,255,100);
+                GetComponent<Image>().color = new Color32(255,255,255,255);
+                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
             case windowTypes.Glitch:
-                GetComponent<Image>().color = new Color32(203,66,245,100);
+                GetComponent<Image>().color = new Color32(203,66,245,255);
+                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
             case windowTypes.Slow:
-                GetComponent<Image>().color = new Color32(245, 230, 66,100);
+                GetComponent<Image>().color = new Color32(245, 230, 66,255);
+                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
             case windowTypes.Ice:
-                GetComponent<Image>().color = new Color32(31, 179, 237,100);
+                GetComponent<Image>().color = new Color32(31, 179, 237,255);
+                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
             case windowTypes.Fire:
-                GetComponent<Image>().color = new Color32(245, 34, 55,100);
+                GetComponent<Image>().color = new Color32(245, 34, 55,255);
+                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
         }
     }
