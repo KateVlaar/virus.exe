@@ -17,7 +17,13 @@ public class HideTutorial : MonoBehaviour, IClickable
         var tutOpenButton = UIHierarchyButton.Where(k => k.transform.name == "TutorialOpenButton").FirstOrDefault();
         
         tutOpenButton.onClick.AddListener(Click);
-        
+
+        if (!tutorialIsOpen)
+        {
+            GetComponent<Renderer>().GetComponentInChildren<Button>().onClick.RemoveListener(Click);
+
+        }
+
     }
 
     // Update is called once per frame
