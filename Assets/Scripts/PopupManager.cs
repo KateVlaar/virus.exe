@@ -55,4 +55,9 @@ public class PopupManager : MonoBehaviour
 
         spawnCountdown = spawnFrequency;
     }
+
+    void FreezeWindow(DraggableWindow window)
+    {
+        Destroy(window.GetComponent<DraggableWindow>());
+    }
 }

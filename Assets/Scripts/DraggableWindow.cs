@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -10,6 +11,9 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     [SerializeField] private RectTransform dragWindow;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Button closeButton;
+    [SerializeField] private Slider slider;
+
+    public bool timerUp = false;
 
     private void Awake()
     {
@@ -23,6 +27,19 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
             closeButton = transform.GetComponentInChildren<Button>();
             closeButton.onClick.AddListener(CloseWindow);
         }
+
+        if (slider == null)
+        {
+            slider = transform.parent.GetComponentInChildren<Slider>();
+
+            TimerBar t = slider.GetComponent<TimerBar>();
+
+            t.onTimerComplete.AddListener(TimerComplete);
+        }
+    }
+
+    void Update()
+    {
     }
 
     public void setCanvas(Canvas canvas)
@@ -32,6 +49,11 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (timerUp)
+        {
+            return;
+        }
+
         dragWindow.anchoredPosition += eventData.delta / _canvas.scaleFactor;
 
         var UIHierarchyParent = transform.parent.parent.parent.GetComponentsInChildren<Transform>();
@@ -53,6 +75,12 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     {
         Destroy(this);
         Destroy(transform.parent.gameObject);
+    }
+
+    void TimerComplete()
+    {
+        closeButton.onClick.RemoveAllListeners();
+        timerUp = true;
     }
 }
 

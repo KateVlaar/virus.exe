@@ -2,23 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using System.UI;
+using UnityEngine.UI;
 
 public class TimerBar : FillBar
 {
-    [SerializeField] private Slider slider;
-
-//    [SerializeField] private Slider closeSlider;
    // Event to call when timer times out
-   private UnityEvent onTimerComplete;
-
-    private void Awake()
-    {
-        if (slider == null)
-        {
-            slider = transform.parent.GetComponent<Slider>();
-        }
-    }
+   public UnityEvent onTimerComplete;
+   public bool timerUp = false;
 
    // Create a property to handle the slider's value
    public new float CurrentValue {
@@ -27,11 +17,18 @@ public class TimerBar : FillBar
        }
        set {
            // If value exceeds timer value, invoke the time out function
-           if (value >= slider.maxValue)
-              onTimerComplete.Invoke();
+           if (value >= slider.maxValue && !timerUp)
+            {
+                onTimerComplete.Invoke();
+                base.CurrentValue = slider.maxValue;
+                timerUp = true;
+            }
+            else
+            {
+                // Remove overfill
+                base.CurrentValue = value % slider.maxValue;
+            }
 
-           // Remove overfill
-           base.CurrentValue = value % slider.maxValue;
            //Only if displaying the remaining time in countdown as text
        }
    }
@@ -39,8 +36,8 @@ public class TimerBar : FillBar
     // Start is called before the first frame update
     void Start()
     {
-        // if (onTimerComplete == null)
-        //     onTimerComplete = new UnityEvent();
+        if (onTimerComplete == null)
+            onTimerComplete = new UnityEvent();
         onTimerComplete.AddListener(OnTimerComplete);        
     }
 
@@ -50,8 +47,8 @@ public class TimerBar : FillBar
         CurrentValue += 0.0153f;
     }
 
-    void OnTimerComplete() {
+    public void OnTimerComplete() {
         Debug.Log("Timer Complete");
-        slider.parent.Find("DraggableWindow").SendMessage("CloseWindow", adWindowCanvas);
+        Destroy(this);
     }
 }
