@@ -49,16 +49,6 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     public void setWindowType(PopupManager.windowTypes windowType)
     {
         GameObject adSpace = transform.GetChild(0).gameObject;
-        windowTypes windowType;
-        //if (Random.value > 0.1)
-        if (false)
-        {
-            windowType = windowTypes.Normal;
-        }
-        else
-        {
-            windowType = (windowTypes)Random.Range(1, 4);
-        }
         var x = GetComponent<Image>().GetComponentInChildren<Image>();
         var j = x.GetComponentInChildren<Image>();
 

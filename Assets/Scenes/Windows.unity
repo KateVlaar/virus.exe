@@ -489,29 +489,31 @@ MonoBehaviour:
   adWindow: {fileID: 995635319232693785, guid: 6866d456bf680a14b8d82536d172b0e6, type: 3}
   adWindowCanvas: {fileID: 806351703}
   normalPool:
-  - {fileID: 21300000, guid: 9c1ea0e599b477b4fa90fbeea1caefc1, type: 3}
-  - {fileID: 21300000, guid: c5d655b60ccd1d240b862d5e66c536ab, type: 3}
-  - {fileID: 21300000, guid: 7dfe3c150da5f4c40874f10553fe20c4, type: 3}
-  - {fileID: 21300000, guid: a44187a68162e0f45aba6ef0ae5ba501, type: 3}
-  - {fileID: 21300000, guid: f7743ca143059c8459df12fab30403bc, type: 3}
-  - {fileID: 21300000, guid: 7c6ee74fa2999e44790b860720f46bf3, type: 3}
-  - {fileID: 21300000, guid: 582299ef27d51874990defc8d08d5523, type: 3}
+  - {fileID: 21300000, guid: d1c58b70157031343bf528c4afbe1900, type: 3}
+  - {fileID: 21300000, guid: 8cad99f81c986e841bf149d22bc399f2, type: 3}
+  - {fileID: 21300000, guid: 53a48dd64714be74d93a2bfaba09ff06, type: 3}
+  - {fileID: 21300000, guid: 2e92ec3c7b905d44a8d96f32f382e71f, type: 3}
+  - {fileID: 21300000, guid: 7480c77f903030b46b2b2cae2a019a51, type: 3}
+  - {fileID: 21300000, guid: cfd0f3ec0176b68408c696f003d3aa70, type: 3}
+  - {fileID: 21300000, guid: c4425fca71d3aae439b0c4b5e4954b63, type: 3}
   glitchPool:
-  - {fileID: 21300000, guid: c5d655b60ccd1d240b862d5e66c536ab, type: 3}
+  - {fileID: 21300000, guid: 8cad99f81c986e841bf149d22bc399f2, type: 3}
   slowPool:
-  - {fileID: 21300000, guid: b08d2c9ffd1f9364cba2bc64898d807f, type: 3}
-  - {fileID: 21300000, guid: c77fcbf61f62e7542b5bc0c05b39c533, type: 3}
-  - {fileID: 21300000, guid: 3d28dec9e121257448431d28733a798c, type: 3}
-  - {fileID: 21300000, guid: 63bf899cd01abbd4dbc5f06fd7cbcec7, type: 3}
+  - {fileID: 21300000, guid: 7c23b0f201388b34699b1e071e15ac95, type: 3}
+  - {fileID: 21300000, guid: 12c96601840a0f64e9c260becd054ca4, type: 3}
+  - {fileID: 21300000, guid: 8d8c57469f6ccc64facdf8af569e192c, type: 3}
+  - {fileID: 21300000, guid: df0a582646f55e04f8ddbbc20d3f764c, type: 3}
   icePool:
-  - {fileID: 21300000, guid: 953e35df126c8404680240e3e112f1a0, type: 3}
-  - {fileID: 21300000, guid: f0ec95668b4fa004289abd39c2ed8d9e, type: 3}
-  - {fileID: 21300000, guid: fcf0f6f4f6a92a34d9e40eaeb3fd0c9b, type: 3}
-  - {fileID: 21300000, guid: 415283468cf1cba4a953ff37b3e74bff, type: 3}
+  - {fileID: 21300000, guid: 23774249a24478143b0457b2141aa77d, type: 3}
+  - {fileID: 21300000, guid: 902c2012858f11b46859d0ff2df2590d, type: 3}
+  - {fileID: 21300000, guid: 60532de6c14ca11478691d7a8bddcfca, type: 3}
+  - {fileID: 21300000, guid: 465d1cbce44cc1549b8a1ef1ba8831ab, type: 3}
+  - {fileID: 21300000, guid: a27aea535ef44f949985bcffa9afb3a9, type: 3}
   firePool:
-  - {fileID: 21300000, guid: 5dd8e44924c264642aa73a030b1b0ed9, type: 3}
-  - {fileID: 21300000, guid: 897014f2cdb45db4cb65fe97540fbf36, type: 3}
-  - {fileID: 21300000, guid: 6f085d99e6eeb0149abd343d2e6de6a0, type: 3}
+  - {fileID: 21300000, guid: 3680c242f9d7cce4592c2a54b6c333b8, type: 3}
+  - {fileID: 21300000, guid: bd267e8603cbe984a9fd30353c472e13, type: 3}
+  - {fileID: 21300000, guid: 46d7be637cc6b9347a1919331f936192, type: 3}
+  - {fileID: 21300000, guid: 322482368c7b62049a4c2e9a74ac82f0, type: 3}
   spawnFrequency: 5
   openCounter: 0
   closedCounter: 0
