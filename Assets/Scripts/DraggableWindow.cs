@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
+public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler, IClickable
 {
     [SerializeField] private RectTransform dragWindow;
     [SerializeField] private Canvas _canvas;
@@ -15,6 +15,9 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     [SerializeField] private Slider slider;
 
     public bool timerUp = false;
+    private windowTypes activeEffect = windowTypes.Slow;
+    private int numIceClicks = 0;
+    public Button iceButton;
 
     private void Awake()
     {
@@ -35,10 +38,20 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
             TimerBar t = slider.GetComponent<TimerBar>();
             t.onTimerComplete.AddListener(TimerComplete);
         }
+
+        var UIHierarchyButton = GetComponent<Image>().transform.parent.GetComponentsInChildren<Button>();
+        iceButton = UIHierarchyButton.Where(k => k.transform.name == "IceLayerButton").FirstOrDefault();
+        iceButton.onClick.AddListener(BreakIce);
     }
 
     void Update()
     {
+        if (activeEffect == windowTypes.Ice)
+        {
+
+
+
+        }
     }
 
     public void setCanvas(Canvas canvas)
@@ -48,7 +61,22 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     
     public void setWindowType(PopupManager.windowTypes windowType)
     {
+<<<<<<< Updated upstream
         GameObject adSpace = transform.GetChild(0).gameObject;
+=======
+        windowTypes windowType;
+        //if (Random.value > 0.1)
+        if (false)
+        {
+            windowType = windowTypes.Normal;
+        }
+        else
+        {
+            windowType = (windowTypes)Random.Range(1, 4);
+        }
+        windowType = windowTypes.Ice;
+
+>>>>>>> Stashed changes
         var x = GetComponent<Image>().GetComponentInChildren<Image>();
         var j = x.GetComponentInChildren<Image>();
 
@@ -73,10 +101,12 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
             case PopupManager.windowTypes.Slow:
                 GetComponent<Image>().color = new Color32(245, 230, 66,255);
                 ProgressBarFill.color = new Color32(209, 193, 17, 255);
+                SetSlowEffect();
                 break;
             case PopupManager.windowTypes.Ice:
                 GetComponent<Image>().color = new Color32(31, 179, 237,255);
                 ProgressBarFill.color = new Color32(10, 142, 194, 255);
+                SetIceEffect();
                 break;
             case PopupManager.windowTypes.Fire:
                 GetComponent<Image>().color = new Color32(245, 34, 55,255);
@@ -127,6 +157,39 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     {
         closeButton.interactable = false;
         timerUp = true;
+    }
+
+    void SetSlowEffect()
+    {
+        activeEffect = windowTypes.Slow;
+
+    }
+
+    void SetIceEffect()
+    {
+        activeEffect = windowTypes.Ice;
+
+        var UIHierarchyParentImage = GetComponent<Image>().transform.parent.GetComponentsInChildren<Image>();
+        var IceSheetImage = UIHierarchyParentImage.Where(k => k.transform.name == "IceLayerButton").FirstOrDefault();
+        IceSheetImage.color = new Color32(31, 179, 237, 255);
+
+
+    }
+
+    void BreakIce()
+    {
+        Debug.Log("Break Ice");
+    }
+
+    public void Click()
+    {
+        numIceClicks++;
+
+        if (numIceClicks > 3)
+        {
+        Debug.Log("DESTROY");
+            Destroy(iceButton);
+        }
     }
 }
 
