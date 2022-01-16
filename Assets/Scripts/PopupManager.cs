@@ -12,9 +12,10 @@ using Random = UnityEngine.Random;
 public class PopupManager : MonoBehaviour
 {
     private bool _shouldSpawn = false;
-    public float spawnFrequency = 5000.0f; // The time until the next window will spawn
+    public float spawnFrequency; // Number of game ticks to spawn windows
     private float spawnCountdown; // The elapsed time
     public GameObject adWindow;
+    public Canvas adWindowCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,10 @@ public class PopupManager : MonoBehaviour
     void SpawnWindow()
     {
         Vector2 randomPosition = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
-        Instantiate(adWindow, randomPosition, quaternion.identity);
+        GameObject newAdWindow = Instantiate(adWindow, randomPosition, quaternion.identity);
+        newAdWindow.transform.SetParent(adWindowCanvas.transform, false);
+        newAdWindow.transform.Find("TitleBar").SendMessage("setCanvas", adWindowCanvas);
+
         spawnCountdown = spawnFrequency;
     }
 }
