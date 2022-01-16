@@ -48,7 +48,7 @@ public class TimerBar : FillBar
     // Update is called once per frame
     void Update()
     {
-        CurrentValue += 0.00153f;
+        CurrentValue += Time.deltaTime * 0.4f;
     }
 
     public void OnTimerComplete() {
