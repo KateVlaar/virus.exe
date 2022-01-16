@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static PopupManager;
 
 public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler, IClickable
 {
@@ -61,10 +62,7 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler,
     
     public void setWindowType(PopupManager.windowTypes windowType)
     {
-<<<<<<< Updated upstream
         GameObject adSpace = transform.GetChild(0).gameObject;
-=======
-        windowTypes windowType;
         //if (Random.value > 0.1)
         if (false)
         {
@@ -76,14 +74,6 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler,
         }
         windowType = windowTypes.Ice;
 
->>>>>>> Stashed changes
-        var x = GetComponent<Image>().GetComponentInChildren<Image>();
-        var j = x.GetComponentInChildren<Image>();
-
-        //var UIHierarchyParent = transform.parent.parent.GetComponentsInChildren<Image>();
-        //var ProgressBarFill = UIHierarchyParent.Where(k => k.transform.name == "Fill").FirstOrDefault();
-
-        GameObject p = (GameObject)GetComponent<Image>().gameObject;
 
         var UIHierarchyParent = GetComponent<Image>().transform.GetComponentsInChildren<Image>();
         var ProgressBarFill = UIHierarchyParent.Where(k => k.transform.name == "Fill").FirstOrDefault();
@@ -169,9 +159,9 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler,
     {
         activeEffect = windowTypes.Ice;
 
-        var UIHierarchyParentImage = GetComponent<Image>().transform.parent.GetComponentsInChildren<Image>();
-        var IceSheetImage = UIHierarchyParentImage.Where(k => k.transform.name == "IceLayerButton").FirstOrDefault();
-        IceSheetImage.color = new Color32(31, 179, 237, 255);
+        //var UIHierarchyParentImage = GetComponent<Image>().transform.parent.GetComponentsInChildren<Image>();
+        //var IceSheetImage = UIHierarchyParentImage.Where(k => k.transform.name == "IceLayerButton").FirstOrDefault();
+        //IceSheetImage.color = new Color32(31, 179, 237, 255);
 
 
     }
