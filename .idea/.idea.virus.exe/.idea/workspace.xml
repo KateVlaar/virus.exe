@@ -27,6 +27,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/RestartGame.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShowTutorial.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HideTutorial.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Windows.unity" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" />
     </changedPaths>
   </component>
@@ -75,7 +76,7 @@
       <workItem from="1642289919651" duration="4126000" />
       <workItem from="1642315321612" duration="4800000" />
       <workItem from="1642329252838" duration="300000" />
-      <workItem from="1642347036764" duration="7733000" />
+      <workItem from="1642347036764" duration="8074000" />
     </task>
     <servers />
   </component>

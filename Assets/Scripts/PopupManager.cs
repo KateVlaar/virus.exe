@@ -54,7 +54,7 @@ public class PopupManager : MonoBehaviour
         Camera camera = GetComponent<Camera>();
         spawnCountdown = spawnFrequency; // Preset spawn timer to desired amount
         openCounter = 0;
-        closedCounter = 30; // TODO: Change from 30 to 0 (this was for debugging)
+        closedCounter = 0;
         difficulty = 0.0f;
         gameOverScreen.GetComponent<SpriteRenderer>().color = new Color32(255,255,255,0);
         scoreText.GetComponent<Text>().text = "";
@@ -97,8 +97,7 @@ public class PopupManager : MonoBehaviour
         float minY = ((Screen.height / 2) * -1) + (Mathf.Abs(adWindowTransform.rect.height) / 2) + TaskBarHeight;
         float maxY = (Screen.height / 2) - (Mathf.Abs(adWindowTransform.rect.height) / 2);
 
-        //if (Random.value > 0.1)
-        if (false)
+        if (Random.value > 0.1)
         {
             windowType = PopupManager.windowTypes.Normal;
         }
@@ -177,11 +176,11 @@ public class PopupManager : MonoBehaviour
     {
         if (closedCounter > 10)
         {
-            IncrementDifficulty(0.1f, 4.0f);
+            IncrementDifficulty(0.1f, 3.0f);
         }
         if (closedCounter > 20)
         {
-            IncrementDifficulty(0.2f, 3.0f);
+            IncrementDifficulty(0.2f, 2.5f);
         }
         if (closedCounter > 30)
         {
