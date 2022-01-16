@@ -4,11 +4,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 using UnityEngine;
-<<<<<<< HEAD
+
 using UnityEngine.UI;
-=======
+
 using UnityEngine.SceneManagement;
->>>>>>> ffd4b62696a09828da68dc48eaf13456c4173435
+
 using Random = UnityEngine.Random;
 
 
@@ -23,13 +23,9 @@ public class PopupManager : MonoBehaviour
     
     public GameObject adWindow;
     public Canvas adWindowCanvas;
-<<<<<<< HEAD
     public GameObject gameOverScreen;
     public GameObject scoreText;
     
-=======
-
->>>>>>> ffd4b62696a09828da68dc48eaf13456c4173435
     [SerializeField] public List<Sprite> normalPool = new List<Sprite>();
     [SerializeField] public List<Sprite> glitchPool = new List<Sprite>();
     [SerializeField] public List<Sprite> slowPool = new List<Sprite>();
@@ -60,11 +56,8 @@ public class PopupManager : MonoBehaviour
         openCounter = 0;
         closedCounter = 30; // TODO: Change from 30 to 0 (this was for debugging)
         difficulty = 0.0f;
-<<<<<<< HEAD
         gameOverScreen.GetComponent<SpriteRenderer>().color = new Color32(255,255,255,0);
         scoreText.GetComponent<Text>().text = "";
-=======
->>>>>>> ffd4b62696a09828da68dc48eaf13456c4173435
     }
 
     // Update is called once per frame
