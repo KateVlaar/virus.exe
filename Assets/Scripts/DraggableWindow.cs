@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -32,8 +33,13 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     public void OnDrag(PointerEventData eventData)
     {
         dragWindow.anchoredPosition += eventData.delta / _canvas.scaleFactor;
-        var x = Mathf.Clamp(dragWindow.anchoredPosition.x, ((Screen.width/2) * -1) + (dragWindow.rect.width) / 2, (Screen.width/2) - (dragWindow.rect.width / 2));
-        var y = Mathf.Clamp(dragWindow.anchoredPosition.y, ((Screen.height/2) * -1) + (dragWindow.rect.height) / 2, (Screen.height/2) - (dragWindow.rect.height / 2));
+
+        var UIHierarchyParent = transform.parent.parent.parent.GetComponentsInChildren<Transform>();
+        var TaskBarPanel = UIHierarchyParent.Where(k => k.transform.name == "Taskbar").FirstOrDefault();
+        float TaskBarHeight = TaskBarPanel.localScale.y;
+
+        var x = Mathf.Clamp(dragWindow.anchoredPosition.x, ((Screen.width/2) * -1) + (dragWindow.rect.width / 2), (Screen.width/2) - (dragWindow.rect.width / 2));
+        var y = Mathf.Clamp(dragWindow.anchoredPosition.y, ((Screen.height/2) * -1) + (dragWindow.rect.height / 2) + TaskBarHeight, (Screen.height/2) - (dragWindow.rect.height / 2));
 
         dragWindow.anchoredPosition = new Vector2(x, y);
     }
