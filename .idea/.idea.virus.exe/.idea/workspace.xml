@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7e0345e-4f7b-4882-8858-a007fe21a388" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Windows.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Windows.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,7 @@
     </changedPaths>
   </component>
   <component name="ProjectId" id="23ksT8M6aZ3E2w2Qq9aUcempQbC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,6 +65,7 @@
       <updated>1642289438682</updated>
       <workItem from="1642289454347" duration="32000" />
       <workItem from="1642289919651" duration="4126000" />
+      <workItem from="1642315321612" duration="1400000" />
     </task>
     <servers />
   </component>
@@ -83,6 +84,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

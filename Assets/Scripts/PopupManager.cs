@@ -22,7 +22,7 @@ public class PopupManager : MonoBehaviour
     public float spawnFrequency; // Number of game ticks to spawn windows
     public int openCounter;
     public int closedCounter;
-    public int difficulty; // From 1 (easiest) to 10 (hardest)
+    public float difficulty; // From 0.0 (easiest) to 0.9 (hardest)
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +30,8 @@ public class PopupManager : MonoBehaviour
         Camera camera = GetComponent<Camera>();
         spawnCountdown = spawnFrequency; // Preset spawn timer to desired amount
         openCounter = 0;
-        closedCounter = 0;
-        difficulty = 1;
+        closedCounter = 30; // TODO: Change from 30 to 0 (this was for debugging)
+        difficulty = 0.0f;
     }
 
     // Update is called once per frame
@@ -82,18 +82,20 @@ public class PopupManager : MonoBehaviour
     public void IncrementOpenCounter()
     {
         openCounter++;
-        CheckWindowCount(openCounter);
+        CheckOpenWindowCount(openCounter);
     }
     // Increment closed window counter when window is closed
     public void IncrementClosedCounter()
     {
         closedCounter++;
+        CheckClosedWindowCount(closedCounter);
     }
     
-    // Increment difficulty when window is closed
-    public void IncrementDifficulty()
+    // Increment difficulty according to given parameter
+    public void IncrementDifficulty(float newDifficulty, float newSpawnFrequency)
     {
-        difficulty++;
+        difficulty = newDifficulty;
+        spawnFrequency = newSpawnFrequency;
     }
 
     // Decrement open window counter when window is closed
@@ -103,11 +105,52 @@ public class PopupManager : MonoBehaviour
     }
     
     // Check how many windows are open - if too many are up, end the game
-    public void CheckWindowCount(int openCounter)
+    public void CheckOpenWindowCount(int openCounter)
     {
         if (openCounter >= 10)
         {
             _shouldSpawn = false;
+        }
+    }
+    
+    // Check how many windows have been closed - adjust the difficulty as necessary
+    public void CheckClosedWindowCount(int closedCounter)
+    {
+        if (closedCounter > 10)
+        {
+            IncrementDifficulty(0.1f, 4.0f);
+        }
+        if (closedCounter > 20)
+        {
+            IncrementDifficulty(0.2f, 4.0f);
+        }
+        if (closedCounter > 30)
+        {
+            IncrementDifficulty(0.3f, 3.0f);
+        }
+        if (closedCounter > 40)
+        {
+            IncrementDifficulty(0.4f, 3.0f);
+        }
+        if (closedCounter > 50)
+        {
+            IncrementDifficulty(0.5f, 2.0f);
+        }
+        if (closedCounter > 60)
+        {
+            IncrementDifficulty(0.6f, 2.0f);
+        }
+        if (closedCounter > 70)
+        {
+            IncrementDifficulty(0.7f, 1.0f);
+        }
+        if (closedCounter > 80)
+        {
+            IncrementDifficulty(0.8f, 1.0f);
+        }
+        if (closedCounter > 90)
+        {
+            IncrementDifficulty(0.9f, 1.0f);
         }
     }
 }
