@@ -15,6 +15,10 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     [SerializeField] private Sprite testSprite;
     [SerializeField] private Slider slider;
 
+    Sprite crack1 = Resources.Load<Sprite>("Sprites/Overlays/Freezing/Crack1");
+    Sprite crack2 = Resources.Load<Sprite>("Sprites/Overlays/Freezing/Crack2");
+    Sprite crack3 = Resources.Load<Sprite>("Sprites/Overlays/Freezing/Crack3");
+
     public bool timerUp = false;
     private windowTypes activeEffect = windowTypes.Slow;
     private int numIceClicks = 0;
@@ -195,14 +199,17 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
         {
             case 1:
                 IceSheetImage.color = new Color32(31, 179, 237, 127);
+                IceSheetImage.sprite = crack1;
                 break;
             case 2:
                 IceSheetImage.color = new Color32(31, 179, 237, 63);
+                IceSheetImage.sprite = crack2;
                 break;
             case 3:
                 IceSheetImage.color = new Color32(31, 179, 237, 0);
                 Destroy(iceButton.gameObject);
                 activeEffect = windowTypes.Normal;
+                IceSheetImage.sprite = crack3;
                 break;
         }
     }
