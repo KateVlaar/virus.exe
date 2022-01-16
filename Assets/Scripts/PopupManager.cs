@@ -160,7 +160,7 @@ public class PopupManager : MonoBehaviour
             _shouldSpawn = false;
         }
     }
-    
+
     // Check how many windows have been closed - adjust the difficulty as necessary
     public void CheckClosedWindowCount(int closedCounter)
     {
@@ -201,4 +201,9 @@ public class PopupManager : MonoBehaviour
             IncrementDifficulty(0.9f, 1.0f);
         }
     }
+    void FreezeWindow(DraggableWindow window)
+    {
+        Destroy(window.GetComponent<DraggableWindow>());
+    }
+
 }
