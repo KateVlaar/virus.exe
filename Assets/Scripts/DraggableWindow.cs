@@ -11,18 +11,6 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Button closeButton;
     [SerializeField] private Sprite testSprite;
-    
-    public GameObject[] prefabPool;
-    public GameObject[] prefabRandom;
-    
-    public enum windowTypes
-    {
-        Normal,
-        Glitch,
-        Slow,
-        Ice,
-        Fire
-    }
 
     private void Awake()
     {
@@ -43,42 +31,33 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
         _canvas = canvas;
     }
     
-    public void setWindowType(float difficulty)
+    public void setWindowType(PopupManager.windowTypes windowType)
     {
-        windowTypes windowType;
-        //if (Random.value > 0.1)
-        if (false)
-        {
-            windowType = windowTypes.Normal;
-        }
-        else
-        {
-            windowType = (windowTypes)Random.Range(1, 4);
-        }
         GameObject adSpace = transform.GetChild(0).gameObject;
         switch (windowType)
         {
-            case windowTypes.Normal:
+            case PopupManager.windowTypes.Normal:
                 GetComponent<Image>().color = new Color32(255,255,255,255);
-                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
-            case windowTypes.Glitch:
+            case PopupManager.windowTypes.Glitch:
                 GetComponent<Image>().color = new Color32(203,66,245,255);
-                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
-            case windowTypes.Slow:
+            case PopupManager.windowTypes.Slow:
                 GetComponent<Image>().color = new Color32(245, 230, 66,255);
-                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
-            case windowTypes.Ice:
+            case PopupManager.windowTypes.Ice:
                 GetComponent<Image>().color = new Color32(31, 179, 237,255);
-                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
-            case windowTypes.Fire:
+            case PopupManager.windowTypes.Fire:
                 GetComponent<Image>().color = new Color32(245, 34, 55,255);
-                adSpace.GetComponent<Image>().sprite = testSprite;
                 break;
         }
+    }
+    
+    public void setWindowSprite(Sprite windowSprite)
+    {
+        GameObject adSpace = transform.GetChild(0).gameObject;
+        adSpace.GetComponent<Image>().sprite = windowSprite;
     }
 
     public void OnDrag(PointerEventData eventData)

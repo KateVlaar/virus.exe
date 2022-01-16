@@ -18,11 +18,28 @@ public class PopupManager : MonoBehaviour
     
     public GameObject adWindow;
     public Canvas adWindowCanvas;
+    
+    [SerializeField] public List<Sprite> normalPool = new List<Sprite>();
+    [SerializeField] public List<Sprite> glitchPool = new List<Sprite>();
+    [SerializeField] public List<Sprite> slowPool = new List<Sprite>();
+    [SerializeField] public List<Sprite> icePool = new List<Sprite>();
+    [SerializeField] public List<Sprite> firePool = new List<Sprite>();
+    
+    public enum windowTypes
+    {
+        Normal,
+        Glitch,
+        Slow,
+        Ice,
+        Fire
+    }
 
     public float spawnFrequency; // Number of game ticks to spawn windows
     public int openCounter;
     public int closedCounter;
     public float difficulty; // From 0.0 (easiest) to 0.9 (hardest)
+    public windowTypes windowType;
+    public Sprite windowSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -71,11 +88,41 @@ public class PopupManager : MonoBehaviour
         float minY = ((Screen.height / 2) * -1) + (Mathf.Abs(adWindowTransform.rect.height) / 2) + TaskBarHeight;
         float maxY = (Screen.height / 2) - (Mathf.Abs(adWindowTransform.rect.height) / 2);
 
+        //if (Random.value > 0.1)
+        if (false)
+        {
+            windowType = PopupManager.windowTypes.Normal;
+        }
+        else
+        {
+            windowType = (windowTypes)Random.Range(1, 4);
+        }
+        switch (windowType)
+        {
+            case windowTypes.Normal:
+                windowSprite = normalPool[(int)Random.Range(0, 2)];
+                break;
+            case windowTypes.Glitch:
+                windowSprite = glitchPool[(int)Random.Range(0, 2)];
+                break;
+            case windowTypes.Slow:
+                windowSprite = slowPool[(int)Random.Range(0, 2)];
+                break;
+            case windowTypes.Ice:
+                windowSprite = icePool[(int)Random.Range(0, 2)];
+                break;
+            case windowTypes.Fire:
+                windowSprite = firePool[(int)Random.Range(0, 2)];
+                break;
+        }
+        
         Vector2 randomPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
         GameObject newAdWindow = Instantiate(adWindow, randomPosition, quaternion.identity);
         newAdWindow.transform.SetParent(adWindowCanvas.transform, false);
         newAdWindow.transform.Find("TitleBar").SendMessage("setCanvas", adWindowCanvas);
-        newAdWindow.transform.Find("TitleBar").SendMessage("setWindowType", difficulty);
+        newAdWindow.transform.Find("TitleBar").SendMessage("setWindowType", windowType);
+        newAdWindow.transform.Find("TitleBar").SendMessage("setWindowSprite", windowSprite);
+
         spawnCountdown = spawnFrequency;
     }
 
