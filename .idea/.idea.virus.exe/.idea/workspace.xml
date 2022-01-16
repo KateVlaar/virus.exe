@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7e0345e-4f7b-4882-8858-a007fe21a388" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.virus.exe/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Window.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Window.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Windows.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Windows.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +25,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/DraggableWindow.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TimerBar.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RestartGame.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShowTutorial.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HideTutorial.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PopupManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="23ksT8M6aZ3E2w2Qq9aUcempQbC" />
@@ -79,7 +75,7 @@
       <workItem from="1642289919651" duration="4126000" />
       <workItem from="1642315321612" duration="4800000" />
       <workItem from="1642329252838" duration="300000" />
-      <workItem from="1642347036764" duration="7092000" />
+      <workItem from="1642347036764" duration="7733000" />
     </task>
     <servers />
   </component>

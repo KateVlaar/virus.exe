@@ -573,7 +573,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1874159932}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -931,11 +931,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   adWindow: {fileID: 995635319232693785, guid: 6866d456bf680a14b8d82536d172b0e6, type: 3}
   adWindowCanvas: {fileID: 806351703}
-<<<<<<< HEAD
   gameOverScreen: {fileID: 0}
   scoreText: {fileID: 777237405}
-=======
->>>>>>> ffd4b62696a09828da68dc48eaf13456c4173435
   normalPool:
   - {fileID: 21300000, guid: d1c58b70157031343bf528c4afbe1900, type: 3}
   - {fileID: 21300000, guid: 8cad99f81c986e841bf149d22bc399f2, type: 3}
@@ -944,12 +941,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7480c77f903030b46b2b2cae2a019a51, type: 3}
   - {fileID: 21300000, guid: 4cc1780778e8e7640ae14df0473b3491, type: 3}
   - {fileID: 21300000, guid: cfd0f3ec0176b68408c696f003d3aa70, type: 3}
-  - {fileID: 21300000, guid: 2a92d4434fe3afc43a17acf4cde5756e, type: 3}
+  - {fileID: 21300000, guid: c4425fca71d3aae439b0c4b5e4954b63, type: 3}
   glitchPool:
-  - {fileID: 21300000, guid: c2899085fce946d4faf3222075484356, type: 3}
-  - {fileID: 21300000, guid: 6784e852d57eb2c4f91c43dff5194871, type: 3}
-  - {fileID: 21300000, guid: e8c372a338df6ec448c7507965ca7dc4, type: 3}
-  - {fileID: 21300000, guid: ecf0147fa89bf2140aa55246255985fd, type: 3}
+  - {fileID: 21300000, guid: 6891928e65b004f4cab69ae93ba190dd, type: 3}
+  - {fileID: 21300000, guid: 5cc05f768f66e3e4a8f801b8f14cdf1d, type: 3}
+  - {fileID: 21300000, guid: 4f8c595276fd624449c29fd8c3e29d42, type: 3}
+  - {fileID: 21300000, guid: e5481481b7575c3439e5d97bd263246c, type: 3}
   slowPool:
   - {fileID: 21300000, guid: 7c23b0f201388b34699b1e071e15ac95, type: 3}
   - {fileID: 21300000, guid: 12c96601840a0f64e9c260becd054ca4, type: 3}
@@ -962,7 +959,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 465d1cbce44cc1549b8a1ef1ba8831ab, type: 3}
   - {fileID: 21300000, guid: a27aea535ef44f949985bcffa9afb3a9, type: 3}
   firePool:
-  - {fileID: 21300000, guid: 8c8af8cdbd97d7340abcec467f77bc66, type: 3}
+  - {fileID: 21300000, guid: e717d9266f543ef448e1671cd2ea81d2, type: 3}
   - {fileID: 21300000, guid: 3680c242f9d7cce4592c2a54b6c333b8, type: 3}
   - {fileID: 21300000, guid: bd267e8603cbe984a9fd30353c472e13, type: 3}
   - {fileID: 21300000, guid: 46d7be637cc6b9347a1919331f936192, type: 3}
