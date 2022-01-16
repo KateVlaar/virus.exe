@@ -7,13 +7,17 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static PopupManager;
 
-public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler, IClickable
+public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
     [SerializeField] private RectTransform dragWindow;
     [SerializeField] private Canvas _canvas;
     [SerializeField] private Button closeButton;
     [SerializeField] private Sprite testSprite;
     [SerializeField] private Slider slider;
+
+    Sprite crack1 = Resources.Load<Sprite>("Sprites/Overlays/Freezing/Crack1");
+    Sprite crack2 = Resources.Load<Sprite>("Sprites/Overlays/Freezing/Crack2");
+    Sprite crack3 = Resources.Load<Sprite>("Sprites/Overlays/Freezing/Crack3");
 
     public bool timerUp = false;
     private windowTypes activeEffect = windowTypes.Slow;
@@ -72,8 +76,6 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler,
         {
             windowType = (windowTypes)Random.Range(1, 4);
         }
-        windowType = windowTypes.Ice;
-
 
         var UIHierarchyParent = GetComponent<Image>().transform.GetComponentsInChildren<Image>();
         var ProgressBarFill = UIHierarchyParent.Where(k => k.transform.name == "Fill").FirstOrDefault();
@@ -83,14 +85,22 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler,
             case PopupManager.windowTypes.Normal:
                 GetComponent<Image>().color = new Color32(255,255,255,255);
                 ProgressBarFill.color = new Color32(222, 222, 222, 255);
+                activeEffect = windowTypes.Normal;
+                Destroy(iceButton.gameObject);
+
                 break;
             case PopupManager.windowTypes.Glitch:
                 GetComponent<Image>().color = new Color32(203,66,245,255);
                 ProgressBarFill.color = new Color32(159, 37, 196, 255);
+                Destroy(iceButton.gameObject);
+
+                SetGlitchEffect();
                 break;
             case PopupManager.windowTypes.Slow:
                 GetComponent<Image>().color = new Color32(245, 230, 66,255);
                 ProgressBarFill.color = new Color32(209, 193, 17, 255);
+                Destroy(iceButton.gameObject);
+
                 SetSlowEffect();
                 break;
             case PopupManager.windowTypes.Ice:
@@ -101,6 +111,8 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler,
             case PopupManager.windowTypes.Fire:
                 GetComponent<Image>().color = new Color32(245, 34, 55,255);
                 ProgressBarFill.color = new Color32(181, 18, 34, 255);
+                Destroy(iceButton.gameObject);
+
                 break;
         }
     }
@@ -155,30 +167,50 @@ public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler,
 
     }
 
+    void SetGlitchEffect()
+    {
+        activeEffect = windowTypes.Glitch;
+
+    }
+
     void SetIceEffect()
     {
         activeEffect = windowTypes.Ice;
 
-        //var UIHierarchyParentImage = GetComponent<Image>().transform.parent.GetComponentsInChildren<Image>();
-        //var IceSheetImage = UIHierarchyParentImage.Where(k => k.transform.name == "IceLayerButton").FirstOrDefault();
-        //IceSheetImage.color = new Color32(31, 179, 237, 255);
-
-
+        var UIHierarchyParentImage = GetComponent<Image>().transform.parent.GetComponentsInChildren<Image>();
+        var IceSheetImage = UIHierarchyParentImage.Where(k => k.transform.name == "IceLayerButton").FirstOrDefault();
+        IceSheetImage.color = new Color32(31, 179, 237, 191);
     }
 
     void BreakIce()
     {
-        Debug.Log("Break Ice");
-    }
+        // ice button should maybe be a prefab and only spawn for ice windows but not enough time so all windows hit this
+        if (activeEffect != windowTypes.Ice)
+        {
+            return;
+        }
 
-    public void Click()
-    {
         numIceClicks++;
 
-        if (numIceClicks > 3)
+        var UIHierarchyParentImage = GetComponent<Image>().transform.parent.GetComponentsInChildren<Image>();
+        var IceSheetImage = UIHierarchyParentImage.Where(k => k.transform.name == "IceLayerButton").FirstOrDefault();
+
+        switch (numIceClicks)
         {
-        Debug.Log("DESTROY");
-            Destroy(iceButton);
+            case 1:
+                IceSheetImage.color = new Color32(31, 179, 237, 127);
+                IceSheetImage.sprite = crack1;
+                break;
+            case 2:
+                IceSheetImage.color = new Color32(31, 179, 237, 63);
+                IceSheetImage.sprite = crack2;
+                break;
+            case 3:
+                IceSheetImage.color = new Color32(31, 179, 237, 0);
+                Destroy(iceButton.gameObject);
+                activeEffect = windowTypes.Normal;
+                IceSheetImage.sprite = crack3;
+                break;
         }
     }
 }
